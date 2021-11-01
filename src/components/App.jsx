@@ -1,10 +1,13 @@
 import React from 'react'
+
+import Slider from './templates/slider/Slider.jsx'
+
 import './App.scss'
 
 const App = () => {
     return (
         <div>
-            <h1 className="header__one"> TAGRE </h1>
+           <Slider />
         </div>
     )
 }

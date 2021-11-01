@@ -1,0 +1,15 @@
+.slider__main {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 500px;
+
+  .slider__buttons--main {
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}

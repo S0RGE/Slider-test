@@ -1,0 +1,48 @@
+.slider--right {
+  position: relative;
+  background-color: rgb(250, 149, 82);
+  display: flex;
+  align-items: center;
+
+  .slider--right--container {
+    transform: rotate(90deg);
+    width: 500px;
+    text-align: center;
+    position: relative;
+    left: -180px;
+
+    .slider--right--header {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      text-transform: uppercase;
+      font-size: 70px;
+      font-weight: bold;
+      color: #fff;
+    }
+  }
+
+  .slider__counter {
+    position: absolute;
+    right: 0;
+    bottom: 150px;
+    transform: rotate(90deg);
+    width: 10%;
+    overflow: hidden;
+    font-size: 30px;
+
+    display: flex;
+
+    & hr {
+      background-color: #fff;
+      border: 1px solid white;
+    }
+
+    & span {
+      color: #fff;
+      font-size: 12px;
+    }
+  }
+}
