@@ -3,13 +3,13 @@ import "./style.scss";
 import MainButton from "../../atoms/main-button/MainButton.jsx";
 import ProgressBar from "../../atoms/progress-bar/Progressbar.jsx";
 
-const SliderButtons = ({onLeftClick, onRightClick, stripePercent }) => {
+const SliderButtons = ({onLeftClick, onRightClick, stripePercent, bgcolor }) => {
   
 
   return (
     <>
     <div className="slider__buttons--stripe">
-        <ProgressBar bgcolor="rgb(248, 129, 1)" completed={stripePercent}/>
+        <ProgressBar bgcolor={bgcolor} completed={stripePercent}/>
     </div>
       <div className="slider__buttons">
         <MainButton onClick={onLeftClick}>Left</MainButton>

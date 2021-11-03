@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // Style import
 import "./style.scss";
 // Components import
@@ -37,6 +37,11 @@ const Slider = () => {
 
   const images = require.context("./../../../images", true);
 
+  useEffect(() => {
+    console.log('Animation')
+  }, [sliderCount])
+
+
   const onLeftClick = () => {
     setSliderCount((prev) => {
       if (prev === 0) return sliderImage.length - 1;
@@ -62,7 +67,8 @@ const Slider = () => {
         <SliderButtons
           onLeftClick={onLeftClick}
           onRightClick={onRightClick}
-          stripePercent="60"
+          bgcolor = "rgb(248, 129, 1)"
+          stripePercent={((sliderCount+1)/sliderImage.length)*100}
         />
       </div>
       <div className="slider__image">
