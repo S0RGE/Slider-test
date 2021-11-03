@@ -7,7 +7,7 @@ const SliderLeft = ({ title, description }) => {
   return (
     <div className="slider--left">
       <img className="slider__logo" src={logo} alt="" />
-      <div>
+      <div className="slider--left--text">
         <h2 className="slider--left--title">{title}</h2>
         <div className="slider--left--inner">
           <div className="slider--title--stripe"></div>

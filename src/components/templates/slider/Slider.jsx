@@ -7,25 +7,66 @@ import SliderRight from "../../organisms/slider-right/SliderRight.jsx";
 import SliderButtons from "../../molecules/sliderButtons/SliderButtons.jsx";
 
 const Slider = () => {
-  const [state, setstate] = useState(0);
+  const [sliderCount, setSliderCount] = useState(0);
+  const [sliderImage, setSliderImage] = useState([
+    "./promo-01.png",
+    "./promo-02.png",
+    "./promo-01.png",
+    "./promo-02.png",
+    "./promo-01.png",
+    "./promo-02.png",
+  ]);
+
+  const [sliderRightTitle, setSliderRightTitle] = useState([
+    "Бензопилы",
+    "Мотокосы",
+    "Бензопилы",
+    "Мотокосы",
+    "Бензопилы",
+    "Мотокосы",
+  ]);
+
+  const [sliderLeftDescription, setSliderLeftDescription] = useState([
+    "Единственное условие - регистрация продукта, которая займет меньше минуты и будет сделана прямо в магазине в момент Вашей покупки",
+    "Промо текст - почувствуй мощь",
+    "Единственное условие - регистрация продукта, которая займет меньше минуты и будет сделана прямо в магазине в момент Вашей покупки",
+    "Промо текст - почувствуй мощь",
+    "Единственное условие - регистрация продукта, которая займет меньше минуты и будет сделана прямо в магазине в момент Вашей покупки",
+    "Промо текст - почувствуй мощь",
+  ]);
+
+  const images = require.context("./../../../images", true);
 
   const onLeftClick = () => {
-    console.log("Left click");
+    setSliderCount((prev) => {
+      if (prev === 0) return sliderImage.length - 1;
+      return --prev;
+    });
   };
   const onRightClick = () => {
-    console.log("Right click");
+    setSliderCount((prev) => {
+      if (prev === sliderImage.length - 1) return 0;
+      return ++prev;
+    });
   };
 
   return (
     <div className="slider__main">
-      <SliderLeft />
-      <SliderRight />
+      <SliderLeft description={sliderLeftDescription[sliderCount]}/>
+      <SliderRight
+        maxCounter={sliderImage.length}
+        counter={sliderCount + 1}
+        title={sliderRightTitle[sliderCount]}
+      />
       <div className="slider__buttons--main">
         <SliderButtons
           onLeftClick={onLeftClick}
           onRightClick={onRightClick}
           stripePercent="60"
         />
+      </div>
+      <div className="slider__image">
+        <img src={images(sliderImage[sliderCount]).default} alt="image" />
       </div>
     </div>
   );

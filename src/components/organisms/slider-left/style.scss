@@ -4,7 +4,7 @@ $color: rgb(250, 149, 82);
   background-color: rgb(242, 242, 242);
   position: relative;
 
-  text-transform: uppercase;
+  
 
   display: flex;
   align-items: center;
@@ -20,41 +20,50 @@ $color: rgb(250, 149, 82);
     height: 30px;
   }
 
-  .slider--title--paragraph {
-    color: #333;
-  }
+  .slider--left--text {
+    width: 60%;
+    .slider--left--title {
+      text-transform: uppercase;
+      width: 60%;
+      font-size: 40px;
+    }
 
-  .slider--left--inner {
-    display: flex;
-    margin: 15px 0;
-  }
+    .slider--title--paragraph {
+      font-family: Montserrat-Regular;
+      width: 60%;
+      color: #333;
+    }
 
-  .slider--title--stripe {
-    margin-right: 20px;
-    margin-top: 4px;
-    width: 45px;
-    border-top: 2px solid $color;
-  }
+    .slider--left--inner {
+      display: flex;
+      margin: 15px 0;
+    }
 
-  .slider--left--button {
-    outline: none;
-    margin-top: 45px;
-    line-height: 30px;
-    border-radius: 3px;
-    background-color: #000;
-    width: 150px;
-    height: 30px;
-    cursor: pointer;
-    color: #fff;
-    text-transform: uppercase;
-    position: relative;
-    transition: background-color 0.6s cubic-bezier(0.42, 0, 0.58, 1);    
-    overflow: hidden;
-    z-index: 1;
-    display: inline-block;
+    .slider--title--stripe {
+      margin-right: 20px;
+      margin-top: 4px;
+      width: 45px;
+      border-top: 2px solid $color;
+    }
 
-    &:after {
-        content: '';
+    .slider--left--button {
+      font-family: Montserrat;
+      margin-top: 45px;
+      line-height: 40px;
+      border-radius: 3px;
+      background-color: #000;
+      width: 150px;
+      height: 40px;
+      cursor: pointer;
+      color: #fff;
+      text-transform: uppercase;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      display: inline-block;
+
+      &:after {
+        content: "";
         position: absolute;
         bottom: 0;
         left: 0;
@@ -64,16 +73,14 @@ $color: rgb(250, 149, 82);
         z-index: -2;
       }
       &:before {
-        content: '';
+        content: "";
         position: absolute;
         bottom: 0;
         left: 0;
         width: 0%;
         height: 100%;
         background-color: $color;
-        border-color: transparent;
-        color: #fff;
-        transition: all .3s;
+        transition: all 0.3s;
         z-index: -1;
       }
       &:hover {
@@ -83,11 +90,6 @@ $color: rgb(250, 149, 82);
           width: 100%;
         }
       }
-  }   
-
-  .slider--left--title {
-    font-family: Bodoni;
-    width: 60%;
-    font-size: 40px;
+    }
   }
 }

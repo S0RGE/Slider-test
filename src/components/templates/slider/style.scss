@@ -3,7 +3,7 @@
 
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: 500px;
+  grid-auto-rows: 800px;
 
   .slider__buttons--main {
     width: 200px;
@@ -11,5 +11,18 @@
     position: absolute;
     right: 0;
     bottom: 0;
+  }
+
+  .slider__image {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    right: 33%;
+    height: 100%;  
+    img {
+      object-fit: cover;
+      margin: 0 auto;
+      margin-left: 50%;
+    }
   }
 }

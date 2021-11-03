@@ -2,7 +2,8 @@ import React from "react";
 
 import "./style.scss";
 
-const SliderRight = ({title, counter,maxCounter}) => {
+const SliderRight = ({ title, counter, maxCounter }) => {
+
   return (
     <div className="slider--right">
       <div className="slider--right--container">
