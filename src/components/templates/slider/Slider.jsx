@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Fade from "react-reveal/Fade";
 // Style
 import "./style.scss";
 //Components
@@ -40,8 +41,8 @@ const Slider = () => {
   const images = require.context("./../../../images", true);
 
   useEffect(() => {
-    console.log('Animation')
-  }, [sliderCount])
+    console.log("Animation");
+  }, [sliderCount]);
 
   const onLeftClick = () => {
     setSliderCount((prev) => {
@@ -58,7 +59,7 @@ const Slider = () => {
 
   return (
     <div className="slider__main">
-      <SliderLeft description={sliderLeftDescription[sliderCount]}/>
+      <SliderLeft description={sliderLeftDescription[sliderCount]} />
       <SliderRight
         maxCounter={sliderImage.length}
         counter={sliderCount + 1}
@@ -68,13 +69,15 @@ const Slider = () => {
         <SliderButtons
           onLeftClick={onLeftClick}
           onRightClick={onRightClick}
-          bgcolor = "rgb(248, 129, 1)"
-          stripePercent={((sliderCount+1)/sliderImage.length)*100}
+          bgcolor="rgb(248, 129, 1)"
+          stripePercent={((sliderCount + 1) / sliderImage.length) * 100}
         />
       </div>
-      <div className="slider__image">
-        <Image  image={images(sliderImage[sliderCount]).default} />
-      </div>
+      <Fade spy={images(sliderImage[sliderCount]).default} right>
+        <div className="slider__image">
+          <Image image={images(sliderImage[sliderCount]).default} />
+        </div>
+      </Fade>
     </div>
   );
 };

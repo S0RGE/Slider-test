@@ -1,4 +1,5 @@
 import React from "react";
+import Fade from "react-reveal/Fade";
 
 import "./style.scss";
 import logo from "./../../../icons/logo.svg";
@@ -7,16 +8,18 @@ const SliderLeft = ({ title, description }) => {
   return (
     <div className="slider--left">
       <img className="slider__logo" src={logo} alt="" />
-      <div className="slider--left--text">
-        <h2 className="slider--left--title">{title}</h2>
-        <div className="slider--left--inner">
-          <div className="slider--title--stripe"></div>
-          <div className="slider--title--text">
-            <p className="slider--title--paragraph">{description}</p>
-            <button className="slider--left--button">Узнать больше</button>
+      <Fade spy={description} left>
+        <div className="slider--left--text">
+          <h2 className="slider--left--title">{title}</h2>
+          <div className="slider--left--inner">
+            <div className="slider--title--stripe"></div>
+            <div className="slider--title--text">
+              <p className="slider--title--paragraph">{description}</p>
+              <button className="slider--left--button">Узнать больше</button>
+            </div>
           </div>
         </div>
-      </div>
+      </Fade>
     </div>
   );
 };
