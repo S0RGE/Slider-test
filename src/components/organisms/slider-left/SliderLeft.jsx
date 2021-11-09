@@ -12,9 +12,7 @@ const SliderLeft = ({ title, description }) => {
         <div className="slider--left--inner">
           <div className="slider--title--stripe"></div>
           <div className="slider--title--text">
-            <p className="slider--title--paragraph">
-              {description}
-            </p>
+            <p className="slider--title--paragraph">{description}</p>
             <button className="slider--left--button">Узнать больше</button>
           </div>
         </div>
@@ -25,7 +23,7 @@ const SliderLeft = ({ title, description }) => {
 
 SliderLeft.defaultProps = {
   title: "Возьми ctihl - почувствуй мощь!",
-  description: "Промо текст, почувствуй мощь"
+  description: "Промо текст, почувствуй мощь",
 };
 
 export default SliderLeft;

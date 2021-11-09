@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-// Style import
+// Style
 import "./style.scss";
-// Components import
+//Components
 import SliderLeft from "../../organisms/slider-left/SliderLeft.jsx";
 import SliderRight from "../../organisms/slider-right/SliderRight.jsx";
 import SliderButtons from "../../molecules/sliderButtons/SliderButtons.jsx";
+//Images
+import Image from "../../atoms/image/Image.jsx";
 
 const Slider = () => {
   const [sliderCount, setSliderCount] = useState(0);
@@ -41,7 +43,6 @@ const Slider = () => {
     console.log('Animation')
   }, [sliderCount])
 
-
   const onLeftClick = () => {
     setSliderCount((prev) => {
       if (prev === 0) return sliderImage.length - 1;
@@ -72,7 +73,7 @@ const Slider = () => {
         />
       </div>
       <div className="slider__image">
-        <img src={images(sliderImage[sliderCount]).default} alt="image" />
+        <Image  image={images(sliderImage[sliderCount]).default} />
       </div>
     </div>
   );
